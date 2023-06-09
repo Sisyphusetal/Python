@@ -10,6 +10,7 @@ class User:
 
     def display_info(self):
         print(f"{self.first_name}\n{self.last_name}\n{self.email}\n{self.age}\n{self.is_rewards_member}\n{self.gold_card_points}")
+        return self
     
     def enroll(self):
         if self.is_rewards_member == True:
@@ -17,28 +18,23 @@ class User:
         else:
             self.is_rewards_member = True
             self.gold_card_points += 200
+        return self
 
     def spend_points(self,amount):
         if amount > self.gold_card_points:
             print("Insufficient reward points.")
         else:
             self.gold_card_points -= amount
+        return self
 
 
 
 
 user_kurt = User("Kurt", "Clausen", "email@email.org", "31")
-user_kurt.display_info()
-user_kurt.enroll()
+user_kurt.display_info().enroll().spend_points(50).display_info().enroll()
 user_aubrey = User("Aubrey", "Clausen", "aubrey@email.com", "29")
 user_christian = User("Christian", "Clausen", "christian@email.com", "70")
-user_kurt.spend_points(50)
-user_aubrey.enroll()
-user_aubrey.spend_points(80)
-user_kurt.display_info()
-user_aubrey.display_info()
-user_christian.display_info()
-user_kurt.enroll()
-user_christian.spend_points(40)
+user_aubrey.enroll().spend_points(80).display_info()
+user_christian.display_info().spend_points(40)
 
 
