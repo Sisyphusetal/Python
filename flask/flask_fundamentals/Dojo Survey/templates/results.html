@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+
+<body>
+    <div class="info-container">
+        <div>
+            <h1>Submitted Info:</h1>
+        </div>
+        <div class="columns">
+            <div class="column-one">
+                <p class="fs-3">Name:</p>
+                <p class="fs-3">Dojo Location:</p>
+                <p class="fs-3">Favorite Language:</p>
+                <p class="fs-3">Comment:</p>
+            </div>
+            <div class="column-two">
+                <p class="fs-3">{{ session['name'] }}</p>
+                <p class="fs-3">{{ session['location'] }}</p>
+                <p class="fs-3">{{ session['language'] }}</p>
+                <p class="fs-3">{{ session['comment'] }}</p>
+            </div>
+        </div>
+        <a href="/"><button>Go back</button></a>
+    </div>
+</body>
+
+</html>

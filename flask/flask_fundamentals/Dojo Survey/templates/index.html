@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="/process" method="POST">
+            <div class="form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="location">
+                    <option value="blank"></option>
+                    <option value="Online">Online</option>
+                    <option value="Bellevue">Bellevue</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Chicago">Chicago</option>
+                </select>
+
+                <label for="language">Favorite Language:</label>
+                <select name="language" id="language">
+                    <option value="blank"></option>
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Java">Java</option>
+                    <option value="C#">C#</option>
+                </select>
+
+                <p>Comment (optional):</p>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
