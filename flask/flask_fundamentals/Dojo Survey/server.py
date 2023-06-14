@@ -6,6 +6,7 @@ app.secret_key = "Wood 5"
 def default():
     return render_template('index.html')
 
+
 @app.route('/process', methods=['POST'])
 def process():
     session['name'] = request.form['name']
@@ -20,8 +21,8 @@ def result():
     return render_template('results.html')
 
 
-@app.route('/refresh')
-def refresh():
+@app.route('/reset')
+def reset():
     session.clear()
     return redirect('/')
 

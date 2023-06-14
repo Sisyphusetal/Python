@@ -3,18 +3,6 @@ body {
     justify-content: center;
 }
 
-.form-container {
-    width: 50%;
-    border: solid black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-}
 
 .info-container {
     width: 600px;
