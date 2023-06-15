@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is my games list!</h1>
+
+    <a href="/game_form"><button>Add a Game</button></a>
+
+    <ul>
+        {% for game in all_games %}
+        <li>{{ game.name }} | <a href="/edit/{{game.id}}">Edit</a> | <a href="/delete/{{game.id}}">Delete</a></li>
+
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
