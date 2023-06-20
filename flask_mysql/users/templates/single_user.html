@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <h1>Users</h1>
+    <h1>User #{{ user.id }} </h1>
+    <a href="/" class="position-absolute top-0 end-50 fs-2" >Home</a>
     <table>
         <thead>
             <tr>
@@ -22,19 +23,15 @@
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
             <tr>
                 <td class="p-2">{{ user.first_name }}</td>
                 <td class="p-2">{{ user.last_name }}</td>
                 <td class="p-2">{{ user.email }}</td>
-                <td class="p-2">{{ user.updated_at }}</td>
                 <td class="p-2">
-                    <a href="/selected_user/{{ user.id }}">Show</a>
-                    <a href="/edit_user/{{ user.id }}">Edit</a>
-                    <a href="/delete_user/{{ user.id }}">Delete</a>
+                    <a href="/update_user">Edit</a>
+                    <a href="/delete_user">Delete</a>
                 </td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
 
