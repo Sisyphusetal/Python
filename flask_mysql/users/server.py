@@ -1,22 +1,28 @@
-from flask import Flask render_template, redirect,
-#Importing the class from friend.py
-from friend import Friend
+from flask import Flask, render_template, request, redirect, session
+
+from users import User
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
-    #call the class method to get all friends
-    friends = Friend get_all()
-    print(friends)
-    return render_template('index.html', friend=friends)
+    all_users = User.get_all()
+    print(all_users)
+    return render_template('read_all.html', users=all_users)
+
+@app.route('/create')
+def new_user():
+    return render_template('create.html')
+
+@app.route('/create_user', methods=['POST'])
+def create_user():
+    User.save(request.form)
+    return redirect('/')
 
 
 
 
 
 
-if __name__ == __main__:
+if __name__ == "__main__":
     app.run(debug=True)
-
-
-# %(key_name)s

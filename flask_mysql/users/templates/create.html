@@ -11,20 +11,18 @@
 </head>
 
 <body>
-    <h1>Users</h1>
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Occupation</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for one_friend in friends %}
-            <tr>{{ one_friend.first_name }}</tr>
-            <tr>{{ one_friend.last_name }}</tr>
-            <tr>{{ one_friend.occupation }}</tr>
-    </tbody>
+    
+
+    <h1>Add User</h1>
+    <form action="/create_user" method="POST">
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name">
+        <label for="last_name">Last Name: </label>
+        <input type="text" name="last_name">
+        <label for="email">Email: </label>
+        <input type="email" name="email">
+        <a href="/create_user"><input type="submit" value="Add User"></a>
+    </form>
 
 
 
