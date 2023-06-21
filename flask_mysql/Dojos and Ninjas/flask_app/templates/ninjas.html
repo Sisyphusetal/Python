@@ -10,23 +10,24 @@
 </head>
 <body>
     
-    <h1>Add User</h1>
+    <h1>New Ninja</h1>
     <a href="/" class="position-absolute top-0 end-50 fs-2" >Home</a>
-    <form action="/create_user" method="post">
-        <label for="dojo">Dojo: </label>
-        <input type="text" name="dojo">
+    <form action="/create_ninja" method="post" class="d-flex flex-column w-25 p-2">
+        <label for="name">Dojo:</label>
+        <select name="dojo_id" class="form-select w-50">
+            <option disabled selected>--Select--</option>
+            {% for dojo in dojos %}
+                <option value="{{ dojo.id }}"> {{ dojo.name }}</option>
+            {% endfor %}
+        </select>
         <label for="first_name">First Name: </label>
         <input type="text" name="first_name">
         <label for="last_name">Last Name: </label>
         <input type="text" name="last_name">
         <label for="age">Age: </label>
         <input type="text" name="age">
-        <input type="submit" value="Add User">
+        <input type="submit" value="Create">
     </form>
-    
-
-
-
 
 
 

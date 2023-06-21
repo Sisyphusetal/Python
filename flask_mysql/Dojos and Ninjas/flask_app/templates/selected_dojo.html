@@ -11,6 +11,7 @@
 <body>
     
     <h1>{{ dojo.name }} Ninjas</h1>
+    <a href="/" class="position-absolute top-0 end-50 fs-2">Home</a>
     <table>
         <thead>
             <tr>
@@ -20,11 +21,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for ninja in dojo.ninjas %}
             <tr>
-                <td class="p-2">ninja.first_name</td>
-                <td class="p-2">ninja.last_name </td>
-                <td class="p-2">ninja.age</td>
+                <td class="p-2">{{ ninja.first_name }}</td>
+                <td class="p-2">{{ ninja.last_name }}</td>
+                <td class="p-2">{{ ninja.age }}</td>
             </tr>
             {% endfor %}
         </tbody>

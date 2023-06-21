@@ -23,11 +23,12 @@
 
     <div class="p-2">
         <h1>All Dojos</h1>
-        <div class="border border-dark d-flex flex-column">
+        <div class="border border-dark d-flex flex-column p-2">
             {% for dojo in dojos %}
-                <a href="/dojos/{{ dojo_id }}">{{ dojo.name }}</a>
+                <a href="/dojos/{{ dojo.id }}">{{ dojo.name }}</a>
             {% endfor %}
         </div>
+        <a href="/create_ninja_form">Add Ninja</a>
 
     </div>
 
