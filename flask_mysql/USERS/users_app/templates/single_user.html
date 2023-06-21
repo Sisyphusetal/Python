@@ -28,8 +28,8 @@
                 <td class="p-2">{{ user.last_name }}</td>
                 <td class="p-2">{{ user.email }}</td>
                 <td class="p-2">
-                    <a href="/update_user">Edit</a>
-                    <a href="/delete_user">Delete</a>
+                    <a href="/edit_user/{{ user.id }}">Edit</a>
+                    <a href="/delete_user/{{ user.id }}">Delete</a>
                 </td>
             </tr>
         </tbody>
