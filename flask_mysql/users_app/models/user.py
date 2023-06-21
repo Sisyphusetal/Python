@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from users_app.config.mysqlconnection import connectToMySQL
 
 class User:
     DB = "user_schema"

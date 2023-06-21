@@ -1,7 +1,5 @@
-from flask import Flask, render_template, request, redirect, session
-
-from users import User
-app = Flask(__name__)
+from users_app import app
+from users_app.controllers import user
 
 
 @app.route('/')
