@@ -1,5 +1,6 @@
 from users_app import app
-from users_app.controllers import user
+from flask import render_template, redirect, request, session, flash
+from users_app.models.user import User
 
 
 @app.route('/')
@@ -41,12 +42,3 @@ def delete_user(user_id):
     data = {"user_id": user_id}
     User.delete_user(data)
     return redirect('/')
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
