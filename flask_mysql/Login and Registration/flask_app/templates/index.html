@@ -44,12 +44,19 @@
 
     <div class="w-75">
         <h1>Login</h1>
-        <form action="/" method="post" class="d-flex flex-column w-25 p-2">
+        <form action="/user_login" method="post" class="d-flex flex-column w-25 p-2">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <label for="email">Email: </label>
             <input type="email" name="email">
 
-            <label for="last_name">Password: </label>
-            <input type="text" name="last_name">
+            <label for="password">Password: </label>
+            <input type="text" name="password">
 
             <input type="submit" value="Login">
         </form>
