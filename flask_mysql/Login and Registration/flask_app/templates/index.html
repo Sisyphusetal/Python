@@ -10,33 +10,50 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<body class="d-flex w-75">
 
-    <h1>Register</h1>
-    <a href="/" class="position-absolute top-0 end-50 fs-2">Home</a>
-    <form action="/" method="post" class="d-flex flex-column w-25 p-2">
-        <label for="first_name">First Name: </label>
-        <input type="text" name="first_name">
-        <label for="last_name">Last Name: </label>
-        <input type="text" name="last_name">
-        <label for="email">Email: </label>
-        <input type="email" name="email">
-        <label for="password">Password: </label>
-        <input type="text" name="password">
-        <label for="password">Confirm Password: </label>
-        <input type="text" name="password">
-        <input type="submit" value="Create">
-    </form>
+    <div class="w-75">
+        <h1>Register</h1>
+        <form action="/user_register" method="post" class="d-flex flex-column w-25 p-2">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
 
-    <h1>Login</h1>
-    <a href="/" class="position-absolute top-0 end-50 fs-2">Home</a>
-    <form action="/" method="post" class="d-flex flex-column w-25 p-2">
-        <label for="first_name">Email: </label>
-        <input type="text" name="first_name">
-        <label for="last_name">Password: </label>
-        <input type="text" name="last_name">
-        <input type="submit" value="Create">
-    </form>
+            <label for="first_name">First Name: </label>
+            <input type="text" name="first_name">
+
+            <label for="last_name">Last Name: </label>
+            <input type="text" name="last_name">
+
+            <label for="email">Email: </label>
+            <input type="text" name="email">
+
+            <label for="password">Password: </label>
+            <input type="text" name="password">
+
+            <label for="confirm_password">Confirm Password: </label>
+            <input type="text" name="confirm_password">
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <div class="w-75">
+        <h1>Login</h1>
+        <form action="/" method="post" class="d-flex flex-column w-25 p-2">
+            <label for="email">Email: </label>
+            <input type="email" name="email">
+
+            <label for="last_name">Password: </label>
+            <input type="text" name="last_name">
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
 
 
 
